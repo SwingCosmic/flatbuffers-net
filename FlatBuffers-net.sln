@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatBuffers-net", "FlatBuffers-net\FlatBuffers-net.csproj", "{AEF06D2C-20D0-4842-8B02-739F18B63D2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlatBuffers-net", "FlatBuffers-net\FlatBuffers-net.csproj", "{AEF06D2C-20D0-4842-8B02-739F18B63D2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatBuffers-net.Tests", "FlatBuffers-net.Tests\FlatBuffers-net.Tests.csproj", "{113E48CC-4D7A-4F58-89A1-0B5664B62141}"
 EndProject
@@ -16,13 +16,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{A3DD96A9-754
 		LICENSE = LICENSE
 		NOTICE = NOTICE
 		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0671495E-2A9A-4807-A95E-568C8FE1E7A5}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGame.Example", "MyGame.Example\MyGame.Example.csproj", "{583FF81B-B630-439D-8EAD-866219DD6C94}"
@@ -66,5 +59,8 @@ Global
 		{28C00774-1E73-4A75-AD8F-844CD21A064D} = {7E807B3C-9C20-4830-8E9D-5205760A7DA9}
 		{583FF81B-B630-439D-8EAD-866219DD6C94} = {50A95404-E093-454C-88B7-0FBA0679BE88}
 		{327BC278-C2B8-43EA-83F5-632515E32859} = {50A95404-E093-454C-88B7-0FBA0679BE88}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8198CC08-C3AA-4384-B42C-97F8D9327A11}
 	EndGlobalSection
 EndGlobal

@@ -1,143 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{113E48CC-4D7A-4F58-89A1-0B5664B62141}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlatBuffers.Tests</RootNamespace>
-    <AssemblyName>FlatBuffers-net.Tests</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AssertExtensions.cs" />
-    <Compile Include="SerializationTests\TestTableWithArrayOfStrings.cs" />
-    <Compile Include="SerializationTests\TestTableWithArrayOfTables.cs" />
-    <Compile Include="SerializationTests\TestTableWithIdentifier.cs" />
-    <Compile Include="SerializationTests\TestTableWithNestedTestTable1.cs" />
-    <Compile Include="TestTypes\ClassReflectedAsAStruct.cs" />
-    <Compile Include="TestTypes\EnumWithUserMetadata.cs" />
-    <Compile Include="FlatBuffersDeserializationTests.cs" />
-    <Compile Include="FlatBuffersSchemaTests.cs" />
-    <Compile Include="FlatBuffersSchemaTypeWriterTests.cs" />
-    <Compile Include="SerializationTestOracleTests.cs" />
-    <Compile Include="SerializationTests\TestEnum.cs" />
-    <Compile Include="SerializationTests\TestStruct1.cs" />
-    <Compile Include="SerializationTests\TestStruct2.cs" />
-    <Compile Include="SerializationTests\TestTable1.cs" />
-    <Compile Include="SerializationTests\TestTable2.cs" />
-    <Compile Include="SerializationTests\TestTable3.cs" />
-    <Compile Include="SerializationTests\TestTableWithArray.cs" />
-    <Compile Include="SerializationTests\TestTableWithArrayOfStructs.cs" />
-    <Compile Include="SerializationTests\TestTableWithDefaults.cs" />
-    <Compile Include="SerializationTests\TestTableWithDeprecatedField.cs" />
-    <Compile Include="SerializationTests\TestTableWithOriginalOrdering.cs" />
-    <Compile Include="SerializationTests\TestTableWithStruct.cs" />
-    <Compile Include="SerializationTests\TestTableWithTable.cs" />
-    <Compile Include="SerializationTests\TestTableWithUnion.cs" />
-    <Compile Include="SerializationTests\TestTableWithUnionAndMoreFields.cs" />
-    <Compile Include="SerializationTests\TestTableWithUserOrdering.cs" />
-    <Compile Include="SerializationTests\TestUnion.cs" />
-    <Compile Include="TestTypes\StructReflectedAsATable.cs" />
-    <Compile Include="TestTypes\TableWithAlternativeNameFields.cs" />
-    <Compile Include="TestTypes\TableWithUserMetadata.cs" />
-    <Compile Include="TestTypes\TableWithRequiredFields.cs" />
-    <Compile Include="TestTypes\TestEnum.cs" />
-    <Compile Include="TestTypes\TestEnumWithExplicitNonContigValues.cs" />
-    <Compile Include="TestTypes\TestEnumWithExplicitValues.cs" />
-    <Compile Include="SerializationTestOracle.cs" />
-    <Compile Include="TestTypes\TestIgnoredTable.cs" />
-    <Compile Include="TestTypes\TestStruct1.cs" />
-    <Compile Include="TestTypes\TestStruct2.cs" />
-    <Compile Include="TestTypes\TestStructWithEnum.cs" />
-    <Compile Include="TestTypes\TestStructWithForcedAlignment.cs" />
-    <Compile Include="TestTypes\TestTable1.cs" />
-    <Compile Include="TestTypes\TestTable1UsingFields.cs" />
-    <Compile Include="TestTypes\TestTableWithArrayOfBytes.cs" />
-    <Compile Include="TestTypes\TestTableWithArrayOfStrings.cs" />
-    <Compile Include="TestTypes\TestTableWithArrayOfTables.cs" />
-    <Compile Include="TestTypes\TestTableWithComments.cs" />
-    <Compile Include="TestTypes\TestTableWithDefaults.cs" />
-    <Compile Include="TestTypes\TestTableWithHash.cs" />
-    <Compile Include="TestTypes\TestTableWithIdentifier.cs" />
-    <Compile Include="TestTypes\TestTableWithIgnoredField.cs" />
-    <Compile Include="TestTypes\TestTableWithKey.cs" />
-    <Compile Include="TestTypes\TestTableWithNestedTestTable1.cs" />
-    <Compile Include="TestTypes\TestTableWithOriginalOrdering.cs" />
-    <Compile Include="TestTypes\TestTableWithUnion.cs" />
-    <Compile Include="TestTypes\TestTableWithUserOrdering.cs" />
-    <Compile Include="TestTypes\TestTable2.cs" />
-    <Compile Include="TestTypes\TestTable3.cs" />
-    <Compile Include="TestTypes\TestTableWithArray.cs" />
-    <Compile Include="FlatBuffersSerializationTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestTypes\TestTableWithArrayOfStructs.cs" />
-    <Compile Include="TestTypes\TestTableWithStruct.cs" />
-    <Compile Include="TestTypes\TestTableWithTable.cs" />
-    <Compile Include="TestTypes\TestUnion.cs" />
-    <Compile Include="TypeModelReflectionTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FlatBuffers-net\FlatBuffers-net.csproj">
-      <Project>{aef06d2c-20d0-4842-8b02-739f18b63d2d}</Project>
-      <Name>FlatBuffers-net</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\flatbuffers\net\FlatBuffers\FlatBuffers.csproj">
-      <Project>{28c00774-1e73-4a75-ad8f-844cd21a064d}</Project>
-      <Name>FlatBuffers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="rootTest.fbs" />
-    <None Include="serializationTest.fbs" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>FlatBuffers.Tests</RootNamespace>
+		<IsTestProject>true</IsTestProject>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
+		<PackageReference Include="NUnit" Version="2.7.1" />
+        <PackageReference Include="NUnitTestAdapter" Version="2.3.0" />
+		<!--<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+		<PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
+		<PackageReference Include="coverlet.collector" Version="3.2.0" />-->
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\FlatBuffers-net\FlatBuffers-net.csproj" />
+	</ItemGroup>
+	<PropertyGroup>
+		<PreBuildEvent>
+		</PreBuildEvent>
+	</PropertyGroup>
 </Project>

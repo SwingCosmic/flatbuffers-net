@@ -12,11 +12,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
-  
   <ItemGroup>
-    <ProjectReference Include="..\flatbuffers\net\FlatBuffers\FlatBuffers.csproj">
-      <Project>{28c00774-1e73-4a75-ad8f-844cd21a064d}</Project>
-      <Name>FlatBuffers</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\flatbuffers\net\FlatBuffers\FlatBuffers.csproj" />
   </ItemGroup>
 </Project>
