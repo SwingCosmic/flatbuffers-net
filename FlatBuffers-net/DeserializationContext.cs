@@ -399,6 +399,10 @@ namespace FlatBuffers
             {
                 return DeserializeStruct(offset, 0, typeModel);
             }
+            if (typeModel.BaseType == BaseType.Vector)
+            {
+                return DeserializeVector(offset, 0, field);
+            }
             throw new NotImplementedException();
         }
 
