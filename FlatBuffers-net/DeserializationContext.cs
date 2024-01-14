@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FlatBuffers.Utilities;
+using Google.FlatBuffers;
 
 namespace FlatBuffers
 {
@@ -38,7 +39,8 @@ namespace FlatBuffers
         {
             var len = _buffer.GetInt(offset);
             var startPos = offset + sizeof(int);
-            return Encoding.UTF8.GetString(_buffer.Data, startPos, len);
+            //return Encoding.UTF8.GetString(_buffer.Data, startPos, len);
+            return _buffer.GetStringUTF8(startPos, len);
         }
 
         private string GetString(int structBase, int offset)
@@ -47,7 +49,8 @@ namespace FlatBuffers
             offset += _buffer.GetInt(offset);
             var len = _buffer.GetInt(offset);
             var startPos = offset + sizeof(int);
-            return Encoding.UTF8.GetString(_buffer.Data, startPos, len);
+            //return Encoding.UTF8.GetString(_buffer.Data, startPos, len);
+            return _buffer.GetStringUTF8(startPos, len);
         }
 
         private bool CheckIdentifier(int structBase, string identifier)
@@ -398,10 +401,6 @@ namespace FlatBuffers
             if (typeModel.BaseType == BaseType.Struct)
             {
                 return DeserializeStruct(offset, 0, typeModel);
-            }
-            if (typeModel.BaseType == BaseType.Vector)
-            {
-                return DeserializeVector(offset, 0, field);
             }
             throw new NotImplementedException();
         }

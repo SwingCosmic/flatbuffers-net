@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Google.FlatBuffers;
+using System;
 
 namespace FlatBuffers
 {
@@ -66,7 +67,8 @@ namespace FlatBuffers
             var builder = new FlatBufferBuilder(count);
             var context = new SerializationContext(_typeModelRegistry, obj, builder);
             context.Serialize();
-            Buffer.BlockCopy(builder.DataBuffer.Data, builder.DataBuffer.Length - builder.Offset, buffer, offset, builder.Offset);
+            // Buffer.BlockCopy(builder.DataBuffer.Data, builder.DataBuffer.Length - builder.Offset, buffer, offset, builder.Offset);
+            Buffer.BlockCopy(builder.DataBuffer.ToArray(0, builder.DataBuffer.Length), builder.DataBuffer.Length - builder.Offset, buffer, offset, builder.Offset);
             return builder.Offset;
         }
 

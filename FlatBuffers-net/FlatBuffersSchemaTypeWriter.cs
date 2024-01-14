@@ -271,7 +271,7 @@ namespace FlatBuffers
 
             var fieldName = ApplyNameStyle(_options.FieldNamingStyle, field.Name);
 
-            _writer.WriteLine("{0}{1}:{2}{3};", _indent, fieldName, fieldTypeName, meta);
+            _writer.WriteLine("{0}{1}: {2}{3};", _indent, fieldName, fieldTypeName, meta);
         }
 
         private string ApplyNameStyle(FlatBuffersSchemaWriterNamingStyle style, string name)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using FlatBuffers.Utilities;
+using Google.FlatBuffers;
 
 namespace FlatBuffers
 {
@@ -264,7 +265,8 @@ namespace FlatBuffers
             }
             else
             {
-                _builder.StartObject(structDef.FieldCount);
+                //_builder.StartObject(structDef.FieldCount);
+                _builder.StartTable(structDef.FieldCount);
 
                 var enumerable = structDef.UseOriginalOrdering
                     ? structDef.Fields
@@ -274,7 +276,8 @@ namespace FlatBuffers
                 {
                     SerializeStructField(obj, structDef, field);
                 }
-                return _builder.EndObject();
+                //return _builder.EndObject();
+                return _builder.EndTable();
             }
             return _builder.Offset;
         }

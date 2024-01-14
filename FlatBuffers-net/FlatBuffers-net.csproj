@@ -13,6 +13,6 @@
     <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\flatbuffers\net\FlatBuffers\FlatBuffers.csproj" />
+    <PackageReference Include="Google.FlatBuffers" Version="23.5.26" />
   </ItemGroup>
 </Project>
